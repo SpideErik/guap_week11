@@ -1,4 +1,4 @@
-def find_names(words:list[str]):
+def find_names(words):
     names = []
     for i in words:
         if i[0].isupper():
