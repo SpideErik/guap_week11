@@ -3,7 +3,9 @@ from random import randint, sample
 
 def get_words():
     words = []
-    for i in input('Введите слова>').split():
+    # s = input('Введите слова>')
+    s = 'Три девицы под окном Пряли поздно вечерком Кабы была царица'
+    for i in s.split():
         words.append(i.lower())
     return words
 
@@ -16,8 +18,10 @@ def print_prompt(words, idx):
     print(f'Две буквы из слова слева', sample(words[idx-1], 2))
     if len(word) < len(words[idx+1]):
         print('Слово справа длиннее')
-    else:
+    elif len(word) > len(words[idx+1]):
         print('Слово справа короче')
+    else:
+        print('Слово справа такой же длины')
 
 
 def print_words(words):
@@ -27,9 +31,13 @@ def print_words(words):
 
 
 words = get_words()
+
+# загадываем любое слово кроме первого и последнего
 idx_word = randint(1, len(words) - 2)
-print_prompt(words, idx)
+
+print_prompt(words, idx_word)
 print_words(words)
+
 n = int(input('Введите номер слова>')) - 1
 if idx_word == n:
     print('Угадал')
