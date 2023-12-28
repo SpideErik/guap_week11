@@ -9,8 +9,8 @@ def buble_sort(x):
 
 
 lst = []
-for i in range(15):
-    lst.append(randint(0, 100))
+for i in range(20):
+    lst.append(randint(1, 100))
 print(f'Исходные данные {lst}')
 buble_sort(lst)
 print(f'Отсортированные данные {lst}')
