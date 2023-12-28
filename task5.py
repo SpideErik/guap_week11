@@ -7,15 +7,14 @@ for _ in range(n):
     x.append(randint(0, 1))
 print(f'Исходные данные {x}')
 
-max_l = 0
-cur_l = 0
+max_len = 0
+cur_len = 0
 for v in x:
     if v == 1:
-        cur_l += 1
-        if cur_l > max_l:
-            max_l = cur_l
+        cur_len += 1
+        if cur_len > max_len:
+            max_len = cur_len
     else:
-        cur_l = 0
+        cur_len = 0
 
-
-print(f'Длина последовательности из 1 = {max_l}')
+print(f'Максимальная длина последовательности из 1 = {max_len}')
